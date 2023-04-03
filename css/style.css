@@ -1,0 +1,64 @@
+#startQuiz,
+#quizBox {
+    max-width: 700px;
+    /* margin from top is 100 px */
+    margin: 100px auto 0px auto;
+}
+
+
+/* Buttons */
+.opt,
+.btn {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: #343a40;
+    color: #fff;
+}
+
+.opt::before,
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0%;
+    height: 0%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: -1;
+    transition: all 0.4s ease-in-out;
+}
+
+.opt:hover::before,
+.btn:hover::before {
+    width: 200%;
+    height: 200%;
+}
+
+.opt:hover,
+.btn:hover {
+    color: #fff;
+    background-color: #212529;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.opt:active,
+.btn:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.opt.pressed,
+.btn.pressed {
+    transform: translateY(2px);
+    box-shadow: none;
+}
